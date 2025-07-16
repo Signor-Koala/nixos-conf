@@ -18,6 +18,7 @@
       swaylock
       waybar
       swaybg
+      xwayland-satellite
     ];
   };
 }
