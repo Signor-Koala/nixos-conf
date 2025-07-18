@@ -13,11 +13,6 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  users.users.yeff = {
-    isNormalUser = true;
-    extraGroups = ["wheel"];
-  };
-
   programs.firefox.enable = true;
 
   services.mullvad-vpn = {
@@ -60,5 +55,6 @@
     helvum
     easyeffects
     pwvucontrol
+    networkmanagerapplet
   ];
 }

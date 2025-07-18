@@ -5,25 +5,42 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../common/nvf-configuration.nix
-    ../common/essentials.nix
-    ../common/devel-stuff.nix
-    ../common/gaming.nix
-    ../common/desktop-env.nix
+    ../../modules/system/nvf-configuration.nix
+    ../../modules/system/essentials.nix
+    ../../modules/system/devel-stuff.nix
+    ../../modules/system/gaming.nix
+    ../../modules/system/desktop-env.nix
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
 
-  networking.hostName = "midgard";
-  networking.hostId = "ffb68454";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "midgard";
+    hostId = "ffb68454";
+    networkmanager.enable = true;
+  };
   time.timeZone = "Asia/Calcutta";
+
+  users.users.yeff = {
+    isNormalUser = true;
+    extraGroups = ["wheel"];
+  };
+
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "yeff" = import ./home.nix;
+    };
+  };
 
   services.openvpn.servers.home = {config = ''config /home/yeff/message.ovpn'';};
 

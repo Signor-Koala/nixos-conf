@@ -5,16 +5,17 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../common/nvf-configuration.nix
-    ../common/essentials.nix
-    ../common/devel-stuff.nix
-    ../common/gaming.nix
-    ../common/desktop-env.nix
+    ../../common/nvf-configuration.nix
+    ../../common/essentials.nix
+    ../../common/devel-stuff.nix
+    ../../common/gaming.nix
+    ../../common/desktop-env.nix
   ];
 
   boot.loader.grub = {
@@ -38,8 +39,19 @@
   networking.hostName = "yggdrasil"; #
   networking.hostId = "78b55724";
   networking.networkmanager.enable = true;
-
   time.timeZone = "Asia/Calcutta";
+
+  users.users.yeff = {
+    isNormalUser = true;
+    extraGroups = ["wheel"];
+  };
+
+  # home-manager = {
+  #   extraSpecialArgs = {inherit inputs;};
+  #   users = {
+  #     "yeff" = import ./home.nix;
+  #   };
+  # };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 

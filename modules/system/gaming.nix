@@ -8,6 +8,7 @@
     mangohud
     protonup
     gamescope
+    heroic
 
     prismlauncher
     (bottles.override {removeWarningPopup = true;})
