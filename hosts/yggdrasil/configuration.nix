@@ -11,11 +11,11 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../common/nvf-configuration.nix
-    ../../common/essentials.nix
-    ../../common/devel-stuff.nix
-    ../../common/gaming.nix
-    ../../common/desktop-env.nix
+    ../../modules/system/nvf-configuration.nix
+    ../../modules/system/essentials.nix
+    ../../modules/system/devel-stuff.nix
+    ../../modules/system/gaming.nix
+    ../../modules/system/desktop-env.nix
   ];
 
   boot.loader.grub = {
@@ -40,6 +40,8 @@
   networking.hostId = "78b55724";
   networking.networkmanager.enable = true;
   time.timeZone = "Asia/Calcutta";
+
+  networking.wg-quick.interfaces.wg0.configFile = "/home/yeff/.wireguard/wg0.conf";
 
   users.users.yeff = {
     isNormalUser = true;

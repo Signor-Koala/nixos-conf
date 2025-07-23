@@ -8,6 +8,17 @@
     enable = true;
     settings = {
       vim = {
+        augroups = [{name = "UserSetup";}];
+        autocmds = [
+          {
+            event = ["FileType"];
+            pattern = ["markdown"];
+            group = "UserSetup";
+            desc = "Set spellcheck for Markdown";
+            command = "setlocal spell";
+          }
+        ];
+
         theme = {
           enable = true;
           name = "oxocarbon";

@@ -10,6 +10,7 @@
     programs.hyprland.enable = true;
 
     environment.systemPackages = with pkgs; [
+      alacritty
       wofi
       waybar
       psmisc
