@@ -58,6 +58,7 @@
         lsp = {
           enable = true;
           formatOnSave = true;
+          inlayHints.enable = true;
         };
 
         languages = {
@@ -70,6 +71,8 @@
 
           rust = {
             enable = true;
+            crates.enable = true;
+            treesitter.enable = true;
           };
 
           markdown = {

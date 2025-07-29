@@ -35,13 +35,6 @@
     extraGroups = ["wheel"];
   };
 
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "yeff" = import ./home.nix;
-    };
-  };
-
   services.openvpn.servers.home = {config = ''config /home/yeff/message.ovpn'';};
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

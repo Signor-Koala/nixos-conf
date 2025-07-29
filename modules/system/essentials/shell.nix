@@ -19,11 +19,22 @@
     interactiveShellInit = ''
       set fish_greeting
     '';
+    shellAliases = {
+      ls = "${pkgs.eza}/bin/eza";
+      l = "${pkgs.eza}/bin/eza -lah";
+      ll = "${pkgs.eza}/bin/eza -l";
+      la = "${pkgs.eza}/bin/eza -a";
+      lt = "${pkgs.eza}/bin/eza --tree";
+      lla = "${pkgs.eza}/bin/eza -la";
+      ":q" = "exit";
+    };
   };
 
-  environment.systemPackages = with pkgs.fishPlugins; [
-    done
+  environment.systemPackages = with pkgs; [
+    eza
     fzf
-    z
+    fishPlugins.done
+    fishPlugins.fzf
+    fishPlugins.z
   ];
 }

@@ -16,23 +16,41 @@
   outputs = {
     self,
     nixpkgs,
+    home-manager,
     ...
   } @ inputs: {
-    nixosConfigurations.yggdrasil = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        inputs.nvf.nixosModules.default
-        inputs.home-manager.nixosModules.default
-        hosts/yggdrasil/configuration.nix
-      ];
-    };
+    nixosConfigurations = {
+      yggdrasil = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          inputs.nvf.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.yeff = import ./hosts/yggdrasil/home.nix;
+            };
+          }
+          hosts/yggdrasil/configuration.nix
+        ];
+      };
 
-    nixosConfigurations.midgard = nixpkgs.lib.nixosSystem {
-      modules = [
-        inputs.nvf.nixosModules.default
-        inputs.home-manager.nixosModules.default
-        hosts/midgard/configuration.nix
-      ];
+      midgard = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          inputs.nvf.nixosModules.default
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.yeff = import ./hosts/midgard/home.nix;
+            };
+          }
+          hosts/midgard/configuration.nix
+        ];
+      };
     };
   };
 }
