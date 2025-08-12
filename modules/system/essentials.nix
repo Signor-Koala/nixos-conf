@@ -22,6 +22,12 @@
 
   services.flatpak.enable = true;
 
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 3";
+  };
+
   environment.systemPackages = with pkgs; [
     vim
     wget

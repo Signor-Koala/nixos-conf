@@ -35,8 +35,6 @@
     extraGroups = ["wheel"];
   };
 
-  services.openvpn.servers.home = {config = ''config /home/yeff/message.ovpn'';};
-
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   nixpkgs.config.allowUnfree = true;
