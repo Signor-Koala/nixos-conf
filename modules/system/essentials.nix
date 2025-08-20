@@ -28,6 +28,11 @@
     clean.extraArgs = "--keep-since 7d --keep 3";
   };
 
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   environment.systemPackages = with pkgs; [
     vim
     wget

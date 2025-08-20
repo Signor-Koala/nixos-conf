@@ -35,7 +35,6 @@
     fzf
     fishPlugins.done
     fishPlugins.fzf
-    fishPlugins.z
     fishPlugins.tide
   ];
 }

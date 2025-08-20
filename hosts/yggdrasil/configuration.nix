@@ -34,6 +34,7 @@
   programs.virt-manager.enable = true;
   users.groups.libvirtd.members = ["yeff"];
   virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd.qemu.vhostUserPackages = with pkgs; [virtiofsd];
   virtualisation.spiceUSBRedirection.enable = true;
 
   networking.hostName = "yggdrasil"; #
@@ -45,7 +46,7 @@
 
   users.users.yeff = {
     isNormalUser = true;
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "libvirtd"];
   };
 
   # home-manager = {
@@ -72,6 +73,8 @@
     port = 8081;
     enable = true;
   };
+
+  networking.firewall.trustedInterfaces = ["wlp15s0" "virbr0"];
 
   environment.systemPackages = with pkgs; [
     radeontop
