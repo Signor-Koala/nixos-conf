@@ -11,7 +11,6 @@
     heroic
 
     prismlauncher
-    (bottles.override {removeWarningPopup = true;})
   ];
 
   programs.gamemode.enable = true;
