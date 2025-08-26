@@ -8,6 +8,24 @@
   modulesPath,
   ...
 }: {
+  services.zfs.trim.enable = true;
+  services.zfs.autoScrub.enable = true;
+
+  services.sanoid = {
+    enable = true;
+    templates.backup = {
+      hourly = 12;
+      daily = 30;
+      monthly = 3;
+      autosnap = true;
+      autoprune = true;
+    };
+
+    datasets."zpool/home" = {
+      useTemplate = ["backup"];
+    };
+  };
+
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
