@@ -44,7 +44,7 @@
     ffmpeg
     btop
     xed-editor
-    xviewer
+    feh
     xreader
     libreoffice
     transmission_4-gtk

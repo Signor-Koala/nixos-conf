@@ -11,7 +11,7 @@
 
     environment.systemPackages = with pkgs; [
       alacritty
-      wofi
+      fuzzel
       waybar
       psmisc
       hyprpaper
