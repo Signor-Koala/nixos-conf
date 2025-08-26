@@ -10,6 +10,7 @@
 
   imports = [
     ../../modules/home-manager/alacritty.nix
+    ../../modules/home-manager/dunst.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
