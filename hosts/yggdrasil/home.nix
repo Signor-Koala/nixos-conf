@@ -9,8 +9,8 @@
   home.homeDirectory = "/home/yeff";
 
   imports = [
-    ../../modules/home-manager/alacritty.nix
-    ../../modules/home-manager/dunst.nix
+    ../../home-manager/alacritty.nix
+    ../../home-manager/dunst.nix
   ];
 
   # This value determines the Home Manager release that your configuration is

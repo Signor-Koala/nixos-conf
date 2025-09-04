@@ -11,11 +11,11 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../modules/system/nvf-configuration.nix
-    ../../modules/system/essentials.nix
-    ../../modules/system/devel-stuff.nix
-    ../../modules/system/gaming.nix
-    ../../modules/system/desktop-env.nix
+    ../../modules/nvf-configuration.nix
+    ../../modules/essentials.nix
+    ../../modules/devel-stuff.nix
+    ../../modules/gaming.nix
+    ../../modules/desktop-env.nix
   ];
 
   boot.loader.grub = {
