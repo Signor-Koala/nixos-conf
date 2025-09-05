@@ -16,6 +16,7 @@
     ../../modules/devel-stuff.nix
     ../../modules/gaming.nix
     ../../modules/desktop-env.nix
+    ../../modules/emulation.nix
   ];
 
   boot.loader.grub = {
