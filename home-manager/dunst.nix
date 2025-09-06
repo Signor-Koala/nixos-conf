@@ -7,8 +7,9 @@
     enable = true;
     settings = {
       global = {
-        origin = "bottom-right";
+        origin = "top-right";
         idle_threshold = 60;
+        min_icon_size = 96;
       };
 
       urgency_low = {
