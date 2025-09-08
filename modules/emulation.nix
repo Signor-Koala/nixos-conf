@@ -9,5 +9,6 @@
       with cores; [
         beetle-psx-hw
       ]))
+    ryubing
   ];
 }
