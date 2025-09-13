@@ -63,6 +63,7 @@
     })
 
     ungoogled-chromium
+    thunderbird
     helvum
     easyeffects
     pwvucontrol
