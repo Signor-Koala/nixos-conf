@@ -16,6 +16,8 @@
     ../../modules/devel-stuff.nix
     ../../modules/gaming.nix
     ../../modules/desktop-env.nix
+    ../../modules/security.nix
+    ../../modules/virtualisation.nix
   ];
 
   boot.loader = {
@@ -32,7 +34,7 @@
 
   users.users.yeff = {
     isNormalUser = true;
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "libvirtd"];
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

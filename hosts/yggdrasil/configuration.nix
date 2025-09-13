@@ -17,6 +17,7 @@
     ../../modules/gaming.nix
     ../../modules/desktop-env.nix
     ../../modules/emulation.nix
+    ../../modules/virtualisation.nix
   ];
 
   boot.loader.grub = {
@@ -31,12 +32,6 @@
       }
     ];
   };
-
-  programs.virt-manager.enable = true;
-  users.groups.libvirtd.members = ["yeff"];
-  virtualisation.libvirtd.enable = true;
-  virtualisation.libvirtd.qemu.vhostUserPackages = with pkgs; [virtiofsd];
-  virtualisation.spiceUSBRedirection.enable = true;
 
   networking.hostName = "yggdrasil"; #
   networking.hostId = "78b55724";
