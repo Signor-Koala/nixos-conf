@@ -3,6 +3,7 @@
   pkgs,
   ...
 }: {
+  stylix.targets.alacritty.enable = false;
   programs.alacritty = {
     enable = true;
     settings = {

@@ -11,6 +11,8 @@
   imports = [
     ../../home-manager/alacritty.nix
     ../../home-manager/dunst.nix
+    ../../home-manager/udisk.nix
+    ../../home-manager/config.nix
   ];
 
   # This value determines the Home Manager release that your configuration is

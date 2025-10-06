@@ -33,6 +33,7 @@ in {
     ../../modules/desktop-env.nix
     ../../modules/security.nix
     ../../modules/virtualisation.nix
+    ../../modules/themeing.nix
   ];
 
   boot.loader = {

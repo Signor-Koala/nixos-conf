@@ -24,11 +24,12 @@
           providers.wl-copy.enable = true;
         };
 
-        theme = {
-          enable = true;
-          name = "oxocarbon";
-          style = "dark";
-        };
+        # theme = {
+        #   enable = true;
+        #   name = "oxocarbon";
+        #   style = "dark";
+        # };
+
         viAlias = false;
         vimAlias = false;
 
