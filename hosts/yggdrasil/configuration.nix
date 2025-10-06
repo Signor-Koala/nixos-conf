@@ -19,6 +19,7 @@
     ../../modules/emulation.nix
     ../../modules/ai.nix
     ../../modules/virtualisation.nix
+    ../../modules/themeing.nix
   ];
 
   boot.loader.grub = {

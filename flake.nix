@@ -29,6 +29,7 @@
         specialArgs = {inherit inputs;};
         modules = [
           inputs.nvf.nixosModules.default
+          stylix.nixosModules.stylix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
