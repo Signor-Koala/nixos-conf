@@ -18,7 +18,8 @@
     enable = true;
     interactiveShellInit = ''
       set fish_greeting
-    '';
+      set -U fish_color_param f2cdcd
+    ''; # I'm too lazy to fix theming properly
     shellAliases = {
       ls = "${pkgs.eza}/bin/eza";
       l = "${pkgs.eza}/bin/eza -lah";

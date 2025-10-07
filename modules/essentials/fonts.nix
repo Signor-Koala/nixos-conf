@@ -4,6 +4,14 @@
   pkgs,
   ...
 }: {
+  stylix.fonts = {
+    monospace = {
+      package = pkgs.nerd-fonts.jetbrains-mono;
+      name = "JetBrainsMonoNL Nerd Font Mono";
+    };
+  };
+  stylix.targets.fontconfig.enable = false;
+
   fonts = {
     packages = with pkgs; [
       liberation_ttf
