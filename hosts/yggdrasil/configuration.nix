@@ -67,6 +67,7 @@
   ];
 
   desktop.hyprland.enable = true;
+  desktop.niri.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

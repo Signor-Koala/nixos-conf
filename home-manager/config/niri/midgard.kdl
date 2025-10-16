@@ -68,7 +68,6 @@ layout {
 }
 
 spawn-at-startup "waybar"
-spawn-at-startup "xwayland-satellite"
 
 environment {
     DISPLAY ":0"
